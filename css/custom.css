@@ -1,0 +1,281 @@
+/****************** Game Container ***************/
+
+.game_container{
+    margin: 0;
+    display: flex;
+}
+
+/****************** Main Stage ******************/
+
+.game_screen{
+    height: 768px;
+    width: 1280px;
+    background-color: pink;
+    position: relative;
+}
+
+/* Player */
+.player{
+    height: 64px;
+    width: 64px;
+    background-color: turquoise;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.spell_effect{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0);
+    display: block;
+    transition: 0.4s;
+}
+
+/* Attacking */
+.attack{
+    display: none;
+    height: 64px;
+    width: 64px;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 1;
+}
+
+/* Enemy */
+.enemy{
+    height: 64px;
+    width: 64px;
+    background-color: green;
+    position: absolute;
+    top: 128px;
+    left: 128px;
+    transition: 0.4s;
+}
+
+/****************** Left Panel ******************/
+
+.left_section{
+    height: 768px;
+    width: 640px;
+    background-color: red;
+}
+
+/* Smaller Panels */
+.panel{
+    height: 246px;
+    margin: 5px 0;
+    background-color: #d4d4d4;
+    padding: 10px;
+}
+
+.panel_title{
+    color: white;
+    font-size: 20px;
+}
+
+/* Stats */
+
+#hp{
+    height: 18px;
+    background-color: red;
+    width: 100%;
+    position: relative;
+}
+
+#hp_bar{
+    height: 100%;
+    width: 100%;
+    background-color: #2bab2b;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+#mana{
+    height: 18px;
+    background-color: rgb(151, 155, 211);
+    width: 100%;
+    position: relative;
+}
+
+#mana_bar{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(71, 79, 199);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+#exp{
+    height: 18px;
+    background-color: #7d7d7d;
+    width: 100%;
+    position: relative;
+}
+
+#exp_bar{
+    height: 100%;
+    width: 0%;
+    background-color: #ffeb3b;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+#lvl{
+    position: relative;
+}
+
+#lvl span{
+    position: absolute;
+    right: 0;
+}
+
+/* Inventory */
+
+.inventory{
+    height: 148px;
+    background-color: #aeaeae;
+}
+
+.inv_upper{
+    height: 50%;
+    background-color: red;
+    display: flex;
+}
+
+.inv_lower{
+    height: 50%;
+    background-color: green;
+    display: flex;
+}
+
+.item{
+    height: 64px;
+    width: 64px;
+    background-color: blue;
+    margin-left: 3px;
+}
+
+.low_potion{
+    height: 64px;
+    width: 64px;
+    background-image: url(../images/low_potion.png);
+    position: absolute;
+}
+
+.medium_potion{
+    height: 64px;
+    width: 64px;
+    background-image: url(../images/medium_potion.png);
+    position: absolute;
+}
+
+.high_potion{
+    height: 64px;
+    width: 64px;
+    background-image: url(../images/high_potion.png);
+    position: absolute;
+}
+
+.mana_potion{
+    height: 64px;
+    width: 64px;
+    background-image: url(../images/mana_potion.png);
+    position: absolute;
+}
+
+/* Weapons */
+
+.weapon_slot{
+    height: 64px;
+    width: 256px;
+    background: red;
+}
+
+.dagger{
+    height: 64px;
+    width: 64px;
+    background: url(../images/weapons/S_daggers.png);
+    position: absolute;
+}
+
+.sword{
+    height: 64px;
+    width: 64px;
+    background: url(../images/weapons/S_sword.png);
+    position: absolute;
+}
+
+.swordHQ{
+    height: 64px;
+    width: 64px;
+    background: url(../images/weapons/S_swordHQ.png);
+    position: absolute;
+}
+
+/****************** Right Panel ***************/
+
+.right_section{
+    height: 768px;
+    width: 640px;
+    background-color: blue;
+}
+
+.right_section div{
+    height: 768px;
+    background-color: purple;
+}
+
+.text_box{
+    overflow-y: scroll;
+}
+
+/****************** Spell Hotbar ***************/
+
+.spell_hotbar{
+    height: 74px;
+    width: 40%;
+    background: red;
+    display: flex;
+    margin: auto;
+}
+
+.spell{
+    height: 64px;
+    width: 64px;
+    background: green;
+    margin: auto;
+    position: relative;
+}
+
+.spell > p{
+    position: absolute;
+    left: -30px;
+}
+
+/* Fire spell */
+
+.fire_spell{
+    height: 64px;
+    width: 64px;
+    background-color: red;
+    border-radius: 50px;
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+    animation: firePulse 1s infinite;
+}
+
+@keyframes firePulse{
+    from{ border: solid 5px rgb(219, 155, 18); }
+    to{ border: solid 10px rgba(0, 0,0, 0); }
+}
